@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open/Close Door Demo</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        .door-frame {
+            width: 160px;
+            height: 240px;
+            border: 4px solid #333;
+            position: relative;
+            background: #e6e2d3;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .door {
+            width: 100%;
+            height: 100%;
+            background: #8b5a2b;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: left 1s;
+        }
+        .door.open {
+            left: 100%;
+        }
+        button {
+            margin: 0 8px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="door-frame">
+        <div id="door" class="door"></div>
+    </div>
+    <button onclick="openDoor()">Open</button>
+    <button onclick="closeDoor()">Close</button>
+
+    <script>
+        function openDoor() {
+            document.getElementById('door').classList.add('open');
+        }
+        function closeDoor() {
+            document.getElementById('door').classList.remove('open');
+        }
+    </script>
+</body>
+</html>
